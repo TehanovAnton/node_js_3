@@ -15,10 +15,12 @@ http.createServer(function(request, response) {
     if (request.url.endsWith(getCurrentAppStateUrl)) {
         headerOptions = textPlainHeaderOptions
         responseEnd = currentAppState
+        console.log('return currentAppState')
     }
     else {
         headerOptions = textHtmlHeaderOptions
-        responseEnd = fs.readFileSync(htmlPath)        
+        responseEnd = fs.readFileSync(htmlPath)  
+        console.log('return html')      
     }
 
     response.writeHeader(200, headerOptions)

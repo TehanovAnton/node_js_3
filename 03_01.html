@@ -7,11 +7,11 @@
     <title>03-01</title>
 </head>
 <script>
-    // var statePar = document.getElementById('statePar')
-    // var getCurrentAppStateUrl = 'http//localhost:5000/get_current_app_state'
-    // var response = fetch(getCurrentAppStateUrl).then(response => {
-    //     statePar.innerHTML = response.text()
-    // })
+    var statePar = document.getElementById('statePar')
+    var getCurrentAppStateUrl = 'http//localhost:5000/get_current_app_state'
+    var response = fetch(getCurrentAppStateUrl).then(response => {
+        statePar.innerHTML = response.text()
+    })
 </script>
 <body>
     <p id='statePar'>par</p>
