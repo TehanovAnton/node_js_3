@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <p id='statePar'>here should be values</p>    
+    </body>
+
+    <script>
+        var getFactorialsUrl = ''
+
+        var t = 0
+        start = Date.now()
+        for (i = 1; i <= 20; i++) {
+            getFactorialsUrl = `http//localhost:5000/fact?k=${i}`
+            fetch(getFactorialsUrl)
+            .then(response => response.json())
+            .then(json => {
+                console.log(`result: ${(Date.now() - start) / 1000}-${json['k']}/${json['fact']}`)
+            })
+        }
+    </script>
+</html>
